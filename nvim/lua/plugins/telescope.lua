@@ -42,14 +42,14 @@ return {
 				layout_strategy = "vertical_fused",
 				layout_config = {
 					preview_cutoff = 1,
-					width = 0.45,
-					height = 0.6,
+					width = 0.4,
+					height = 0.65,
 				},
 				prompt_prefix = " ❯ ",
 				selection_caret = "❯ ",
 				path_display = { "truncate" },
 				winblend = 0,
-				color_devicons = true,
+				color_devicons = false,
 				sorting_strategy = "descending",
 				mappings = {
 					i = {
@@ -70,7 +70,7 @@ return {
 			},
 			extensions = {
 				file_browser = {
-					previewer = true,
+					previewer = false,
 					grouped = true,
 					hijack_netrw = false,
 					hidden = true,
@@ -87,6 +87,10 @@ return {
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 		vim.keymap.set("n", "<C-f>", builtin.find_files, { desc = "Telescope find files" })
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+
+		if vim.g.neovide then
+			vim.keymap.set("n", "<D-p>", builtin.find_files, { silent = true })
+		end
 
 		-- Telescope Buffer Fuzzy Find Remap
 		vim.keymap.set("n", "<S-f>", function()

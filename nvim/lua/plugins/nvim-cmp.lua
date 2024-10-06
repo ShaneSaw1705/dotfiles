@@ -25,22 +25,6 @@ M.config = function()
 	-- Load friendly snippets (includes Go snippets)
 	require("luasnip.loaders.from_vscode").lazy_load()
 
-	-- Use <Tab> and <S-Tab> for jumping in snippets
-	vim.api.nvim_set_keymap(
-		"i",
-		"<Tab>",
-		[[luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>']],
-		{ expr = true, silent = true }
-	)
-	vim.api.nvim_set_keymap("s", "<Tab>", [[<Cmd>lua require('luasnip').jump(1)<CR>]], { silent = true })
-	vim.api.nvim_set_keymap(
-		"i",
-		"<S-Tab>",
-		[[luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>']],
-		{ expr = true, silent = true }
-	)
-	vim.api.nvim_set_keymap("s", "<S-Tab>", [[<Cmd>lua require('luasnip').jump(-1)<CR>]], { silent = true })
-
 	cmp.setup({
 		snippet = {
 			expand = function(args)
