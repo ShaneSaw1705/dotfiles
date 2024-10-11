@@ -3,6 +3,7 @@ vim.opt.relativenumber = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.clipboard = "unnamedplus"
+vim.opt.fillchars:append({ eob = " " })
 
 -- neovide config
 if vim.g.neovide then

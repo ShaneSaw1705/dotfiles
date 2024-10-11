@@ -1,0 +1,20 @@
+
+# Kitty Configuration File
+
+hide_window_decorations yes
+
+# Font setup in Kitty
+# Use Cascadia Code as the primary font
+font_family Cascadia Code
+font_size 13.0
+
+# WezTerm has a fallback for Nerd Fonts
+# In Kitty, you use symbol maps for icons
+# Mapping the private use area (PUA) for Nerd Font icons
+symbol_map U+E000-U+F8FF JetBrainsMono Nerd Font 
+
+
+# BEGIN_KITTY_THEME
+# Blazer
+include current-theme.conf
+# END_KITTY_THEME
