@@ -4,7 +4,12 @@
 -- Set space as the leader key
 vim.g.mapleader = " "
 
--- Example key mappings using the leader key
-vim.api.nvim_set_keymap('n', '<Leader>w', ':w<CR>', { noremap = true, silent = true }) -- Save
-vim.api.nvim_set_keymap('n', '<Leader>q', ':q<CR>', { noremap = true, silent = true }) -- Quit
+vim.api.nvim_set_keymap("n", "<leader>L", ":Lazy<CR>", { noremap = true, silent = true, desc = "Run lazy" })
 
+-- Key mappings for Normal mode
+vim.api.nvim_set_keymap("n", "gl", "$", { noremap = true, silent = true, desc = "Run lazy" })
+vim.api.nvim_set_keymap("n", "gh", "0", { noremap = true, silent = true, desc = "Run lazy" })
+
+-- Key mappings for Visual mode
+vim.api.nvim_set_keymap("v", "gl", "$", { noremap = true, silent = true, desc = "Run lazy" })
+vim.api.nvim_set_keymap("v", "gh", "0", { noremap = true, silent = true, desc = "Run lazy" })
